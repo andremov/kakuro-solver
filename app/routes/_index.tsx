@@ -148,8 +148,6 @@ export default function Index() {
 
     if (position === Position.DOWN) {
       const [affectedPuzzle] = kakuroCopy.puzzles!.filter((p) => {
-        console.log(p.hintCells);
-
         return (
           p.sum === thisCell.hintNumberDown &&
           p.hintCells.some(

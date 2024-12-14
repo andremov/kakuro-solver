@@ -57,10 +57,7 @@ export function addColumn(grid: KakuroType): KakuroType {
   return {
     width: grid.width + 1,
     height: grid.height,
-    grid: grid.grid.map((col) => [
-      ...col,
-      generateCell(grid.height, grid.width + 1),
-    ]),
+    grid: grid.grid.map((col, idx) => [...col, generateCell(idx, grid.height)]),
   };
 }
 
@@ -69,7 +66,7 @@ export function addRow(grid: KakuroType): KakuroType {
   return {
     width: grid.width,
     height: grid.height + 1,
-    grid: [...grid.grid, generateCells(rowCount, grid.height + 1)],
+    grid: [...grid.grid, generateCells(rowCount, grid.height)],
   };
 }
 
